@@ -4,6 +4,10 @@ from sklearn.metrics import r2_score
 from sklearn.model_selection import GridSearchCV
 from src.exception import CustomException
 
+def getPath():
+    project_path = (os.getcwd().split('\\Student-performance-prediction'))[0]+'\\Student-performance-prediction'
+    return project_path
+
 def save_object(file_path, obj):
     try:
         dir_path = os.path.dirname(file_path)

@@ -3,7 +3,7 @@ import pprint
 from dataclasses import dataclass
 from src.logger import log
 from src.exception import CustomException
-from src.utils import save_object, evaluate_models
+from src.utils import save_object, evaluate_models, getPath
 from catboost import CatBoostRegressor
 from xgboost import XGBRegressor
 from sklearn.ensemble import AdaBoostRegressor, GradientBoostingRegressor, RandomForestRegressor
@@ -13,7 +13,7 @@ from sklearn.tree import DecisionTreeRegressor
 
 @dataclass
 class ModelTrainerConfig:
-    project_path =(os.getcwd().split('\\Proj'))[0]+'\\Proj'
+    project_path = getPath()
     trained_model_file_path = os.path.join(project_path,'artifacts','model.pkl')
 
 class ModelTrainer:

@@ -2,6 +2,7 @@ import os
 import sys
 from src.exception import CustomException
 from src.logger import log
+from src import utils
 import pandas as pd
 from sklearn.model_selection import train_test_split as tts
 from dataclasses import dataclass
@@ -10,7 +11,7 @@ from src.components.model_trainer import ModelTrainer
 
 @dataclass
 class DataIngestionConfig:
-    project_path =(os.getcwd().split('\\Proj'))[0]+'\\Proj'
+    project_path = utils.getPath()
     train_data_path: str=os.path.join(project_path,'artifacts','train.csv')
     test_data_path: str=os.path.join(project_path,'artifacts','test.csv')
     raw_data_path: str=os.path.join(project_path,'artifacts','data.csv')

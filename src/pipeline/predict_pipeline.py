@@ -2,13 +2,13 @@ import os.path
 import sys
 import pandas as pd
 from src.exception import CustomException
-from src.utils import load_object
+from src.utils import load_object, getPath
 from src.logger import log
 
 class PredictPipeline:
    def predict(self, features):
        try:
-           project_path =(os.getcwd().split('\\Proj'))[0]+'\\Proj'
+           project_path = getPath()
            model_path = os.path.join(project_path,'artifacts','model.pkl')
            preprocessor_path = os.path.join(project_path,'artifacts','preprocessor.pkl')
            log("Loading model and preprocessor..")
@@ -17,7 +17,7 @@ class PredictPipeline:
            log("Loading completed.")
            data_scaled = preprocessor.transform(features)
            pred = model.predict(data_scaled)
-           log('Prediction: ' + pred)
+           log('Prediction: ' + str(pred))
            return pred
 
        except Exception as e:
