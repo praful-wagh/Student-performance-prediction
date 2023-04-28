@@ -17,16 +17,8 @@ The model was developed using the scikit-learn library in Python. It uses Random
 
 To use the model, you can input the student's information in the following format and press "Predict your maths score button". The model will then output a predicted math score for the student.
 
-### Student Marks Prediction<br>
-Gender : Male<br>
-Race or Ethnicity : Group B<br>
-Parental Level of Education : Bachelor's degree<br>
-Lunch Type : Standard<br>
-Test preparation Course : Completed<br>
-Writing Score out of 100 : 78<br>
-Reading Score out of 100 : 89<br>
+![Score Prediction](images/score_prediction.png)
 
-The prediction is 85.75
 
 
 # Limitations
