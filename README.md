@@ -17,7 +17,7 @@ The model was developed using the scikit-learn library in Python. It uses Random
 
 To use the model, you can input the student's information in the following format and press "Predict your maths score button". The model will then output a predicted math score for the student.
 
-![Score Prediction](images/score_prediction.png)
+<img src="images/score_prediction.png" alt="Score Prediction" width="50%" />
 
 
 
