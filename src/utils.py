@@ -5,8 +5,11 @@ from sklearn.model_selection import GridSearchCV
 from src.exception import CustomException
 
 def getPath():
-    project_path = (os.getcwd().split('\\Student-performance-prediction'))[0]+'\\Student-performance-prediction'
-    return project_path
+    current_dir = os.getcwd()
+    project_root = os.path.abspath(current_dir)
+    while not os.path.isfile(os.path.join(project_root, 'README.md')):
+        project_root = os.path.dirname(project_root)
+    return project_root
 
 def save_object(file_path, obj):
     try:
